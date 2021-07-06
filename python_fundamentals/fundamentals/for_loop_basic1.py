@@ -13,8 +13,19 @@ for x in range (1, 101):
         print (x)
 
 O = 0
-for num in range (0, 500,000):
+for num in range (0, 500000):
     if (num % 2 != 0):
         O = O + num
 print (O)
-        
+
+y = 2018
+while y > 2:
+    y = y - 4
+    print(y)
+
+lowNum = 1
+highNum = 36
+mult = 5
+for x in range (1, 36):
+    if x % 5 == 0:
+        print (x)
