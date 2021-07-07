@@ -68,11 +68,14 @@ dojo = {
     'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
 }
 
-def printInfo(item_name,some_dict):
-    for thing in some_dict:
-        print(thing[item_name])
-printInfo('locations',dojo)
-printInfo('instructors',dojo)
+def printInfo(some_dict):
+    for key in some_dict:
+        list = some_dict[key]
+        print(f"{len(list)} {key}")
+        for item in list:
+            print(item)
+        # print(f"{thing['locations']}, {thing['instructors']}")
+printInfo(dojo)
 
 
 # output:
