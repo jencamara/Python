@@ -18,7 +18,9 @@ class User:
 
 account1 = User
 account2 = User
+account3 = User
 
 account1.make_deposit(100).make_deposit(50).make_deposit(500).make_withdrawal(75)
-print(self.balance())
 account2.make_deposit(50).make_deposit(1150).make_withdrawal(50).make_withdrawal(200)
+account3.make_deposit(2000).make_withdrawal(200).make_withdrawal(200).make_withdrawal(200)
+print(self.balance())
