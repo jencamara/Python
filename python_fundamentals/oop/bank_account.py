@@ -22,5 +22,5 @@ class BankAccount:
 
 accntone = BankAccount(0.05, 0)
 accnttwo = BankAccount(0.05, 0)
-accntone.deposit(200).deposit(100).deposit(150).withdraw(80).yield_interest().display_account_info(self)
-accnttwo.deposit(150).deposit(150).withdraw(25).withdraw(20).withdraw(20).withdraw(20).yield_interest().display_account_info(self)
+accntone.deposit(200).deposit(100).deposit(150).withdraw(80).yield_interest().display_account_info()
+accnttwo.deposit(150).deposit(150).withdraw(25).withdraw(20).withdraw(20).withdraw(20).yield_interest().display_account_info()
