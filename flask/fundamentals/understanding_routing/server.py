@@ -13,13 +13,11 @@ def dojo():
 @app.route('/say/<name>')
 def say_name(name):
     print(name)
-    return "Hi " + name
+    return "Hi " + name 
 
-@app.route('/repeat/<int>/<word>')
-def repeat(int, word):
-    print(int(""))
-    print(word)
-    return int("") * word
+@app.route('/repeat/<int:xx>/<word>')
+def repeat(xx, word):
+    return xx * word 
 
 if __name__=="__main__":   
 
