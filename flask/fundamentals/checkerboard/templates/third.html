@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='third.css')}}" class="text/css">
+</head>
+<body>
+    <table>
+        {% for h in range (x): %}
+        <tr>
+            {% for i in range (x): %}
+            <td class = "boxcolor1"></td>
+            <td class = "boxcolor2"></td>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for j in range (y): %}
+            <td class = "boxcolor2"></td>
+            <td class = "boxcolor1"></td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
