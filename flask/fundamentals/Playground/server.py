@@ -6,9 +6,10 @@ app = Flask(__name__)
 def play():
     return render_template('index.html')
 
-@app.route('/play/<int:x>')
-def play(x):
-    return render_template('lvl_2_index.html', box = x)
+
+@app.route('/play/<int:xx>')
+def play_multiply(xx):
+    return render_template('lvltwo.html', xx=xx)
 
 if __name__=="__main__":
     app.run(debug=True)
