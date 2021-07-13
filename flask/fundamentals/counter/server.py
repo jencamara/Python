@@ -9,7 +9,7 @@ def num_entry():
     if 'entry' in session:
         session['entry'] = session.get('entry') +1
     else:
-        session['entry'] =1
+        session['entry'] =0
     return render_template('index.html')
 
 # @app.route('/users', methods=['POST'])
@@ -22,9 +22,8 @@ def num_entry():
 
 @app.route('/destroy_session')
 def destroy_session():
-    session.clear()
-    session.pop("time")
-    return render_template('index.html')
+    session.pop("entry", 0)
+    return 'cleared visits'
 
 
 
