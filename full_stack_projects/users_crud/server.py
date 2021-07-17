@@ -17,10 +17,31 @@ def add_user():
     User.create(request.form)
 
     return redirect("/users")
+    
 
 @app.route("/users/<int:user_id>")
 def display_user(user_id):
     return render_template("user.html", user = User.get_single({"id": user_id}))
+
+@app.route("/users/<int:user_id>/edit")
+def edit_user(user_id):
+    return render_template("edituser.html", user = User.get_single({"id": user_id}))
+
+@app.route("/users/<int:user_id>/update", methods = ["POST"])
+def update_user(user_id):
+    new_dict = {
+        "first_name": request.form['first_name'],
+        "last_name": request.form['last_name'],
+        "email": request.form['email'],
+        "id": user_id
+    }
+    User.update(new_dict)
+    return redirect ("/users")
+
+@app.route("/users/<int:user_id>/destroy")
+def delete_user(user_id):
+    User.delete({"id":user_id})
+    return redirect("/users")
 
 
 if __name__=="__main__":
