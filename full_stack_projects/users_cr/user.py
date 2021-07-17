@@ -15,11 +15,20 @@ class User:
             INSERT INTO users (first_name, last_name, email, created_at, updated_at) 
             VALUES (%(first_name)s, %(last_name)s, %(email)s, NOW(), NOW()); 
         """
-        connectToMySQL("users_schema")
+        user_id = connectToMySQL("users_schema").query_db(query, data)
+
+        return user_id
 
     @classmethod
     def get_every(cls):
-        pass
+        query = "SELECT * FROM users;"
+        results = connectToMySQL ("users_schema").query_db(query)
+        all_users = []
+
+        for row in results:
+            all_users.append(cls(row))
+
+        return all_users
 
     @classmethod
     def get_single(cls, data):
