@@ -1,9 +1,12 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models import dojo
 
 class Ninja:
     def __init__ (self, data):
         self.id = data ['id']
-        self.dojo_id = data ['dojo_id']
+        
+        if "dojo_id" in data: 
+            self.dojo = dojo.Dojo.get_single({"id": data['dojo_id']})
         self.first_name = data ['first_name']
         self.last_name = data ['last_name']
         self.age = data ['age']
@@ -22,7 +25,14 @@ class Ninja:
 
     @classmethod
     def get_every(cls):
-        pass
+        query = "SELECT * FROM ninjas;"
+        results = connectToMySQL("dojos_and_ninjas_schema").query_db(query)
+
+        ninjas = []
+        for row in results:
+            ninjas.append(cls(row))
+
+        return ninjas
 
     @classmethod
     def get_one(cls, data):

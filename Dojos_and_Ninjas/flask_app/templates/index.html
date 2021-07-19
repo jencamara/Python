@@ -24,12 +24,14 @@
             {% for dojo in all_dojos %}
                 <tr>
                     <td>
-                        {{ dojo.name }}
+                        <a href="/ninjas/display">{{ dojo.name }}</a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="/ninjas"> Add Ninja</a>
+    <div>
+        <a href="/ninjas"> Add Ninja</a>
+    </div>
 </body>
 </html>
