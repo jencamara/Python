@@ -15,4 +15,4 @@ def new_ninja():
 def create_ninja():
     Ninja.create(request.form)
 
-    return redirect("/dojos")
+    return redirect("/ninjas/display")
