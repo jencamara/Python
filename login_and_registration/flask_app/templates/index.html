@@ -10,13 +10,16 @@
         .row{
             display:flex
         }
+        .text-danger{
+            color: red;
+        }
     </style>
 <body>
     <h2>Login and Registration Portal</h2>
     <div class ="row">
         <div class ="column1">
             <h3>Please register here:</h3>
-            <form action="/registration" method="post">
+            <form action="/register" method="post">
                 <p>
                     First Name:
                     <input type="text" name="first_name" id="">
@@ -42,7 +45,7 @@
         </div>
         <div class ="column2">
             <h3>Client Login:</h3>
-            <form action="/signin" method="post">
+            <form action="/login" method="post">
                 <p>
                     Email:
                     <input type="text" name="email" id="">
@@ -54,6 +57,15 @@
                 <button>Login!</button>
             </form>
         </div>
+    </div>
+    <div>
+        {% with messages = get_flashed_messages () %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class = "text-danger">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     </div>
 </body>
 </html>
