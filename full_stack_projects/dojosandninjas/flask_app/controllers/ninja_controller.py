@@ -3,9 +3,6 @@ from flask_app import app
 from flask_app.models.dojo import Dojo
 from flask_app.models.ninja import Ninja
 
-@app.route("/dojos/<int:dojo_id>")
-def show_ninjas(dojo_id):
-    return render_template("ninja.html", all_ninjas = Ninja.get_every())
 
 @app.route("/ninjas")
 def new_ninja():
@@ -15,4 +12,4 @@ def new_ninja():
 def create_ninja():
     Ninja.create(request.form)
 
-    return redirect("/dojos")
+    return redirect(f"/dojos/{request.form['dojo_id']}")
