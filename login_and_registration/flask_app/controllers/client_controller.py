@@ -31,6 +31,7 @@ def register():
         **request.form,
         "password": first_defense
     }
+    
     client_id = Client.create(data)
 
     session["uuid"] = client_id

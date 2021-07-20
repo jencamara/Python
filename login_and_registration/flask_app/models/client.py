@@ -32,13 +32,6 @@ class Client:
         return clients
 
     @classmethod
-    def get_single(cls, data):
-        query = "SELECT * FROM clients WHERE id = %(id)s;"
-        results = connectToMySQL(cls.schema).query_db(query, data)
-
-        return cls(results[0])
-
-    @classmethod
     def select_email(cls, data):
         query = "SELECT * FROM clients WHERE email = %(email)s;"
         results = connectToMySQL(cls.schema).query_db(query, data)
@@ -48,6 +41,14 @@ class Client:
         
         return cls(results[0])
 
+    @classmethod
+    def get_single(cls, data):
+        query = "SELECT * FROM clients WHERE id = %(id)s;"
+        results = connectToMySQL(cls.schema).query_db(query, data)
+
+        return cls(results[0])
+
+    
     @classmethod
     def create(cls, data):
         query = """

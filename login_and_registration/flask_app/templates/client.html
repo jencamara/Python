@@ -7,33 +7,7 @@
     <title>Client</title>
 </head>
 <body>
-    <h2>Welcome to your account</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>First_Name</th>
-                <th>Last_Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for client in all_clients %}
-                <tr>
-                    <td>{{ client.id }}</td>
-                    <td>{{ client.first_name}}</td>
-                    <td>{{ client.last_name }}</td>
-                    <td>{{ client.email }}</td>
-                    <td>{{ client.password}}</td>
-                    <td>{{ client.created_at}}</td>
-                    <td>{{ client.updated_at}}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <h2>Welcome to your account, {{client.first_name}} !</h2>
     <div>
         <h2>Client info</h2>
         <p>{{client.first_name}}</p>
