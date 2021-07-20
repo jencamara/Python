@@ -58,7 +58,7 @@ class Client:
         return connectToMySQL(cls.schema).query_db(query, data)
 
     @staticmethod
-    def register_validate(post_data):
+    def signup_validate(post_data):
         is_valid = True
 
         if len(post_data['first_name']) < 2:
@@ -79,14 +79,14 @@ class Client:
         if len(post_data['password']) < 8:
             flash ("Password must have at least 8 characters.")
             is_valid = False
-        elif post_data['password'] != post_data['confirm_password']:
+        elif post_data['password'] != post_data['password_confirmation']:
             flash("Your password and confirm password does not match")
             is_valid = False
 
         return is_valid
 
     @staticmethod
-    def login_validate(post_data):
+    def signin_validate(post_data):
         client = Client.select_email({"email": post_data['email']})
 
         if not client:
