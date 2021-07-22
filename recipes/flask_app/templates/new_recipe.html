@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Recipe!</title>
+</head>
+<body>
+    <div class = "row">
+        <h2>Add a New Recipe!</h2>
+        <div>
+            <a href="/home">Home</a>
+        </div>
+        <div>
+            <a href="/signout"> Logout</a>
+        </div>
+    </div>
+    <div>
+        <form action="/recipes/make" method="post">
+            <p>
+                Recipe Name:
+            </p>
+            <p>
+                <input type="text" name="name" id="">
+            </p>
+            <p>
+                Description:
+            </p>
+            <p>
+                <textarea name = "description" cols ="50" rows="10"></textarea>
+            </p>
+            <p>
+                Instructions:
+            </p>
+            <p>
+                <textarea name = "instruction" cols ="50" rows="10"></textarea>
+            </p>
+            <p>
+                Date Created:
+            </p>
+            <p>
+                <input type ="date" name="updated_at">
+            </p>
+            <p>
+                Under 30 mins?:
+            </p>
+            <p>
+                <input type="radio" name="time" value="yes" id="yes">
+                <label for="yes">yes</label>
+                <input type="radio" name="time" value="no" id="no">
+                <label for="no">no</label>
+            </p>
+            <button>Create Recipe!</button>
+        </form>
+    </div>
+    <div>
+        {% with messages = get_flashed_messages () %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class = "text-danger">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
