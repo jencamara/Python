@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Stores</title>
+</head>
+<body>
+    <h2> Your List of Items for {{store.store_name}}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Items</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in store.items %}
+                <tr>
+                    <td>{{ item.item_name}}</td>
+                    <td><a href="/items/{{ item.id }}">View item</a>
+                        <a href="/items/{{ item.id }}/edit">Edit</a>
+                        <a href="/items/{{ item.id }}/delete">Delete Item</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Home</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Item</title>
+</head>
+<body>
+    <h2>New Item</h2> 
+    <form action="/items/create" method="post">
+        <p>
+            Store:
+            <select name="store_id" id="">
+                {% for store in all_stores %}
+                <option value="{{ store.id }}">{{store.store_name}}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            Item:
+            <input type ="text" name="item_name" id="">
+        </p>
+        <p>
+            Description(optional):
+            <input type ="text" name="description" id="">
+        </p>
+        <p>
+            Note to Self:
+            <input type ="text" name="note_to_self" id="">
+        </p>
+        <button>Add Item</button>
+    </form>
+        <p>
+            <a href="/">Home</a>
+        </p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Item</title>
+</head>
+<body>
+    <h2>Edit Item</h2> 
+    <form action="/items/{{item.id}}/update" method="post">
+        <p>
+            Store: {{item.store.store_name}}
+        </p>
+        <p>
+            Item:
+            <input type ="text" name="item_name" id="" value="{{ item.item_name }}">
+        </p>
+        <p>
+            Description(optional):
+            <input type ="text" name="description" id="" value="{{ item.description }}">
+        </p>
+        <p>
+            Note to Self:
+            <input type ="text" name="note_to_self" id="" value="{{ item.note_to_self }}">
+        </p>
+        <button>Edit Item</button>
+    </form>
+        <p>
+            <a href="/">Home</a>
+        </p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <h2 class="title">ListIt!</h2>
+        </div>
+        <div class="row">
+            <div class="leftcolumn">
+                <h2 class="addstore">Add a Store</h2>
+                <form action="/stores/create" method="post">
+                    <p>
+                    Name:
+                    <input type="text" name="store_name" id="">
+                    </p>
+                <button>Add Store</button>
+                </form>
+            </div>
+        </div>
+        <h2>My Favorite Stores</h2>
+        <table>
+            <thead>
+                <th>Stores</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                {% for store in all_stores %}
+                <tr>
+                    <td>
+                        <a href="/stores/{{store.id}}">{{ store.store_name }}</a>
+                    </td>
+                    <td>
+                        <a href="/stores/{{ store.id }}/delete">Delete Store List</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div>
+            <a href="/items">Add Item</a>
+        </div>
+    </div>  
+</body>
+</html>
