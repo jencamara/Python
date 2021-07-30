@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/item.css') }}">
     <title>Added to List</title>
 </head>
 <body>
-    <div class = "row">
-        <div>
-            <a href="/">Home</a>
+    <div class="container">
+        <div class="navbar">
+            <h2 class="itemname">Your Item: {{item.item_name}}</h2>
+            <button class="homebtn"><a href="/" class="hometext">Home</a></button>
         </div>
-        <div>
-            <h2>{{item.item_name}}:</h2>
-            <p>Description: {{item.description}}</p>
-            <p>Note to Self: {{item.note_to_self}}</p>
-            <p>Item updated: {{item.updated_at}}</p>
+        <div class="mainbox">
+            <p class="description">Description: {{item.description}}</p>
+            <p class="selfnote">Note to Self: {{item.note_to_self}}</p>
+            <p class="updated">Item updated: {{item.updated_at}}</p>
         </div>
     </div>
 </body>

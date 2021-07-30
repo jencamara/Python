@@ -4,46 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
     <title>My List</title>
 </head>
 <body>
     <div class="container">
         <div class="topbar">
-            <h2 class="title">ListIt!</h2>
+            <h1 class="title">ListIt!</h1>
         </div>
         <div class="row">
             <div class="leftcolumn">
-                <h2 class="addstore">Add a Store</h2>
+                <div class="lefttop">
+                    <h2 class="addstore">Add a Store</h2>
+                </div>
                 <form action="/stores/create" method="post">
                     <p>
                     Name:
                     <input type="text" name="store_name" id="">
                     </p>
-                <button>Add Store</button>
+                <button class="frontbtn">Add Store</button>
                 </form>
             </div>
         </div>
-        <h2>My Favorite Stores</h2>
-        <table>
-            <thead>
-                <th>Stores</th>
-                <th>Actions</th>
-            </thead>
-            <tbody>
-                {% for store in all_stores %}
-                <tr>
-                    <td>
-                        <a href="/stores/{{store.id}}">{{ store.store_name }}</a>
-                    </td>
-                    <td>
-                        <a href="/stores/{{ store.id }}/delete">Delete Store List</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <div>
-            <a href="/items">Add Item</a>
+        <div class="row">
+            <div class="rightcolumn">
+                <div class="righttop">
+                    <h2 class="favstores">My Favorite Stores</h2>
+                </div>
+                <table class="main">
+                    <thead>
+                        <th>Stores</th>
+                        <th> Delete entire list</th>
+                    </thead>
+                    <tbody>
+                        {% for store in all_stores %}
+                        <tr>
+                            <td>
+                            <a href="/stores/{{store.id}}">{{ store.store_name }}</a>
+                            </td>
+                            <td>
+                            <button class="deletestuff"><a href="/stores/{{store.id}}/delete" class="btntext">delete</a></button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="bottomtop">
+                <h2 class="addyouritem">Add to your list!</h2>
+            </div>
+            <div>
+                <button class="addstuff"><a href="/items" class="btntext">Add Item</a></button>
+            </div>
         </div>
     </div>  
 </body>

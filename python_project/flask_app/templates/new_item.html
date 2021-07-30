@@ -4,35 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/new_item.css') }}">
     <title>New Item</title>
 </head>
 <body>
-    <h2>New Item</h2> 
-    <form action="/items/create" method="post">
-        <p>
-            Store:
-            <select name="store_id" id="">
-                {% for store in all_stores %}
-                <option value="{{ store.id }}">{{store.store_name}}</option>
-                {% endfor %}
-            </select>
-        </p>
-        <p>
-            Item:
-            <input type ="text" name="item_name" id="">
-        </p>
-        <p>
-            Description(optional):
-            <input type ="text" name="description" id="">
-        </p>
-        <p>
-            Note to Self:
-            <input type ="text" name="note_to_self" id="">
-        </p>
-        <button>Add Item</button>
-    </form>
-        <p>
-            <a href="/">Home</a>
-        </p>
+    <div class="container">
+        <div class="topheader">
+            <h2 class="newtitle">New Item</h2>
+            <button class="homebtn"><a href="/" class="hometext">Home</a></button>
+        </div>
+        <div class="mainbox">
+            <form action="/items/create" method="post">
+                <p class="storename">
+                    Store:
+                    <select name="store_id" id="">
+                        {% for store in all_stores %}
+                        <option value="{{ store.id }}">{{store.store_name}}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+                <p class="itemname">
+                    Item:
+                    <input type ="text" name="item_name" id="">
+                </p>
+                <p class="description">
+                    Description(optional):
+                    <input type ="text" name="description" id="">
+                </p>
+                <p class ="selfnote">
+                    Note to Self:
+                    <input type ="text" name="note_to_self" id="">
+                </p>
+                <button class="additem">Add Item</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

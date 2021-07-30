@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: auto;
+    height: 1000px;
+    background-color: #8fd8cc;
+}
+.navbar{
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-bottom: 5px solid white;
+    background-color: black;
+    display: flex;
+}
+.itemname{
+    color:white;
+    text-align: left;
+    margin-left: 175px;
+    padding-bottom: 10px;
+}
+.mainbox{
+    width: 350px;
+    height:auto;
+    margin-left: 150px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    background-color: white;
+    border: 3px solid #8fd8cc;
+    border-radius: 3%;
+}
+
+.homebtn{
+    margin-left: 75px;
+    background-color: #8fd8cc;
+    color: white;
+    width: 75px;
+    height: 35px;
+    border-radius: 5%;
+}
+.hometext{
+    color: black;
+    text-decoration: none;
+}
+.description, .selfnote, .updated{
+    padding-left: 20px;
+    padding-top: 20px;
+}

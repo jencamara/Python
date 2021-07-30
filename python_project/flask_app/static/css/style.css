@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: auto;
+    height: 1000px;
+    background-color: #8fd8cc;
+}
+
+.topbar{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 5px solid white;
+    background-color: black;
+}
+.leftcolumn{
+    height: 200px;
+    width: 250px;
+    margin-top: 35px;
+    margin-left: 150px;
+    background-color: white;
+    border: 3px solid #8fd8cc;
+    border-radius: 3%;
+    text-align: center;
+    color: black;
+}
+.rightcolumn{
+    width: 300px;
+    height:auto;
+    margin-left: 150px;
+    margin-top: 25px;
+    padding-bottom: 10px;
+    background-color: white;
+    border: 3px solid #8fd8cc;
+    border-radius: 3%;
+    text-align: center;
+}
+.title{
+    color:white;
+    text-align: left;
+    margin-left: 175px;
+}
+.frontbtn{
+    background-color: black;
+    margin-top: 20px;
+    color: white;
+    width: 75px;
+    height: 35px;
+    border-radius: 5%;
+}
+.addstore, .favstores{
+    margin-bottom: 20px;
+    color: white;
+}
+.footer{
+    height: 150px;
+    width: 300px;
+    margin-left: 150px;
+    margin-top: 25px;
+    background-color: white;
+}
+.lefttop{
+    height: 35px;
+    background-color:black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 35px;
+    border-radius: 3%;
+}
+
+.righttop{
+    height: 35px;
+    background-color:black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-radius: 3%;
+}
+/* th, td{
+    text-align: center;
+} */
+.bottomtop{
+    height: 35px;
+    background-color:black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-radius: 3%;
+}
+.addyouritem{
+    text-align: center;
+    color: white;
+}
+.addstuff{
+    background-color: black;
+    margin-top: 20px;
+    margin-left: 100px;
+    color: white;
+    width: 75px;
+    height: 35px;
+    border-radius: 5%;
+}
+.btntext{
+    color: white;
+    text-decoration: none;
+}
+
+.deletestuff{
+    background-color: red;
+    margin-left: 20px;
+    width: 50px;
+    height: 25px;
+    border-radius: 5%;
+    margin-top: 12px;
+}
+
+.main{
+    padding-left: 75px;
+}
+
+.row{
+    display: inline-block;
+}

@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/store.css') }}">
     <title>Your Stores</title>
 </head>
 <body>
-    <h2> Your List of Items for {{store.store_name}}</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Items</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in store.items %}
-                <tr>
-                    <td>{{ item.item_name}}</td>
-                    <td><a href="/items/{{ item.id }}">View item</a>
-                        <a href="/items/{{ item.id }}/edit">Edit</a>
-                        <a href="/items/{{ item.id }}/delete">Delete Item</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="/">Home</a>
+    <div class="container">
+        <div class="topbar">
+            <h2 class="storetitle">Your List of Items for {{store.store_name}}</h2>
+            <button class="homebtn"><a href="/" class="hometext">Home</a></button>
+        </div>
+        <div class="mainbox">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Items</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in store.items %}
+                        <tr>
+                            <td>{{ item.item_name}}</td>
+                            <td><button class="viewbtn"><a href="/items/{{item.id}}" class="viewtxt">View Item</a></button>
+                                <button class="editbtn"><a href="/items/{{item.id}}/edit" class="edittxt">Edit</a></button>
+                                <button class="deletebtn"><a href="/items/{{item.id}}/delete" class="deletetxt">Delete Item</a></button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
